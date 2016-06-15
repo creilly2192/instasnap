@@ -76,7 +76,9 @@ body {
 .image {
   border-bottom: 1px solid #eeefef;
   border-top: 1px solid #eeefef;
-  //width: 100%;
+  img {
+    width: 100%;
+  }
 }
 
 .caption {
