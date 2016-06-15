@@ -38,12 +38,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
-    if @post.save
-      redirect_to posts_path
-    else
-      render 'show'
-    end
+    redirect_to posts_path
   end
 
   private
