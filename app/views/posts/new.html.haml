@@ -1,6 +1,15 @@
-%h1 New Upload
+.row
+  %h1.text-center New Upload
 
-= simple_form_for @post do |f|
-  = f.input :image
-  = f.input :caption
-  = f.button :submit
+.form-wrapper.row
+  = simple_form_for @post, html: { class: 'form-vertical', multipart: true } do |f|
+    .row
+      .col-sm-6.pull-left
+        .form-group
+          = f.input :image
+      .col-sm-6.pull-right
+        .form-group.pull-right
+          = f.input :caption
+    .row.text-center.button-holder
+      .form-group
+        = f.button :submit, class: 'btn-success'
