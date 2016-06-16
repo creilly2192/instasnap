@@ -1,8 +1,12 @@
 require 'rails_helper.rb'
 
 feature 'Creating posts' do
+  background do
+    user = create :user
+
+    sign_in_with user
+  end
   scenario 'can create a job' do
-    visit '/'
     click_link 'New Post'
     attach_file('Image', "spec/files/images/profile.png")
     fill_in 'Caption', with: 'nom nom nom #profile'
@@ -12,7 +16,6 @@ feature 'Creating posts' do
   end
 
   it 'needs an image to create a post' do
-    visit '/'
     click_link 'New Post'
     fill_in 'Caption', with: 'something something'
     click_button 'Create Post'

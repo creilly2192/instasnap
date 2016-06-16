@@ -3,6 +3,9 @@ require 'rails_helper.rb'
 feature 'Deleting posts' do
   background do
     post = create(:post, caption: 'stuff')
+    user = create :user
+
+    sign_in_with user
 
     visit '/'
 

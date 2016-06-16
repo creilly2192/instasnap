@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'capybara'
 gem 'factory_girl_rails'
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
