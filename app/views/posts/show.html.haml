@@ -2,7 +2,7 @@
   .post
     .post-head
       .name
-        Christina Reilly
+        %p= @post.user.user_name
     .image.center-block
       = image_tag @post.image.url(:medium), class:'img-responsive'
     %p.caption
