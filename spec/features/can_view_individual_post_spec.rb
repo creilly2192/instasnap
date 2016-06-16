@@ -3,7 +3,7 @@ require 'rails_helper.rb'
 feature 'Can view an individaul post' do
   background do
     user = create :user
-    post = create :post
+    post = create( :post )
     sign_in_with user
   end
   scenario 'view post on image click' do

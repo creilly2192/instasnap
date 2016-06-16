@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :own_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all.order("created_at DESC")
@@ -60,6 +61,13 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:image, :caption)
+  end
+
+  def own_post
+    unless current_user == @post.user
+      flash[:alert] = "Stop being a snoop!"
+      redirect_to root_path
+    end
   end
 
 end

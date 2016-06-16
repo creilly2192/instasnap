@@ -13,6 +13,7 @@ feature 'Creating posts' do
     click_button 'Create Post'
     expect(page).to have_content('#profile')
     expect(page).to have_css("img[src*='profile.png']")
+    expect(page).to have_content('Arnie')
   end
 
   it 'needs an image to create a post' do

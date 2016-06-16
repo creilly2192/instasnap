@@ -2,8 +2,8 @@ require 'rails_helper.rb'
 
 feature 'Can edit a post' do
   background do
-    job = create(:post)
     user = create(:user)
+    post = create(:post)
 
     sign_in_with user
     find(:xpath, "//a[contains(@href,'posts/1')]").click
