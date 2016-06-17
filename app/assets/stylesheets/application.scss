@@ -68,10 +68,10 @@ body {
     .thumbnail {}
     .user-name, .time-ago {
       display: inline;
-      margin-top: 10px;
     }
     .user-name {
       font-weight: 500;
+      float: left;
     }
     .time-ago {
       color: #a5a7aa;
