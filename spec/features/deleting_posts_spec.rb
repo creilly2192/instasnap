@@ -9,7 +9,7 @@ feature 'Deleting posts' do
 
     visit '/'
 
-    find(:xpath, "//a[contains(@href,'posts/1')]").click
+    find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
   end
 
   scenario 'delete post' do
