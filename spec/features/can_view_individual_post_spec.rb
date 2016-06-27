@@ -8,7 +8,7 @@ feature 'Can view an individaul post' do
   end
   scenario 'view post on image click' do
     visit '/'
-    find(:xpath, "//a[contains(@href,'posts/1')]").click
+    find(:xpath, "//a[contains(@href,'posts/1')]", match: :first).click
     expect(page.current_path).to eq(post_path(1))
   end
 end

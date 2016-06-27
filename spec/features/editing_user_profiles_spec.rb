@@ -13,21 +13,21 @@ feature 'editing user profiles' do
 
   scenario 'a user can change their own profile details' do
     # Click the first user's user name
-    click_link 'Arnie'
+    click_link 'Arnie', match: :first
     # Click the 'Edit Profile' button.
     click_link 'Edit Profile'
-    attach_file('user_avatar', 'spec/files/images/avatar.jpg')
+    attach_file('user_avatar', 'spec/files/images/profile.png')
     fill_in 'user_bio', with: 'Is this real life?'
     click_button 'Update Profile'
 
     expect(page.current_path).to eq(profile_path('Arnie'))
-    expect(page).to have_css("img[src*='avatar']")
+    expect(page).to have_css("img[src*='profile']")
     expect(page).to have_content('Is this real life?')
   end
 
   scenario 'a user cannot change someone elses profile picture' do
     # Click the first user's user name
-    click_link 'BennyBoy'
+    click_link 'BennyBoy', match: :first
     # Expect to not see the 'edit profile' button.
     expect(page).to_not have_content('Edit Profile')
   end
@@ -38,6 +38,6 @@ feature 'editing user profiles' do
     # Expect to not see ’Change your profile image:'
     expect(page).to_not have_content('Change your profile image:')
     expect(page.current_path).to eq(root_path)
-    expect(page).to have_content("That profile doesn't belong to you!")
+    expect(page).to have_content("Stop being a snoop!")
   end
 end

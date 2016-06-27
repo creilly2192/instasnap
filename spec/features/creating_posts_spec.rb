@@ -18,7 +18,7 @@ feature 'Creating posts' do
 
   it 'needs an image to create a post' do
     click_link 'New Post'
-    fill_in 'Caption', with: 'something something'
+    fill_in 'post_caption', with: 'something something'
     click_button 'Create Post'
     expect(page).to have_content('Halt, you fiend! You need an image to post here!')
   end

@@ -9,15 +9,16 @@ feature 'viewing user profiles' do
 
     sign_in_with user
     visit '/'
-    first('.user-name').click_link 'Arnie'
   end
 
   scenario 'visiting a profile page shows the user name in the url' do
+    click_link 'Arnie', match: :first
     # Expect the page's URL to be '/users/user-name'.
     expect(page.current_path).to eq(profile_path('Arnie'))
   end
 
   scenario "a profile page only shows the specified user's posts" do
+    click_link 'Arnie', match: :first
     # expect the page to show the user-owned post.
     expect(page).to have_content 'nofilter'
     # expect the page to not show the other user's post.
