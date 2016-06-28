@@ -28,7 +28,16 @@
         = @user.bio
       .user-statistics
         %p
-          = pluralize @user.posts.count, 'post'
+          %span
+            = pluralize @user.posts.count, 'post'
+        %p
+          %span
+            = @user.follower_relationships.count
+          followers
+        %p
+          %span
+            = @user.following_relationships.count
+          following
 
 -@posts.each do |post|
   = render 'posts/post', post: post

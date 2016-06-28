@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   acts_as_votable
   paginates_per 4
+  scope :of_followed_users, -> (following_users) { where user_id: following_users }
 
   belongs_to :user
   has_many :comments, dependent: :destroy
