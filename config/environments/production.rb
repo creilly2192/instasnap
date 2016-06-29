@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  Paperclip.options[:command_path] = "/usr/local/bin/convert"
+
+  config.action_mailer.default_url_options = { host: 'https://immense-inlet-13412.herokuapp.com'}
 end
