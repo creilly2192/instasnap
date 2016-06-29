@@ -26,7 +26,7 @@
  body {
    height: 100%;
    background-color: #fafafa;
-   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+   font-family: 'Open Sans', sans-serif;
  }
 
  .alert {
@@ -37,11 +37,15 @@
 
  .navbar {
    margin-bottom: 0px;
+   border-radius: 0px;
  }
 
  .navbar-brand {
    a {
      color: $primary-color;
+     &:hover {
+       text-decoration: none;
+     }
    }
  }
 
@@ -57,11 +61,6 @@
    margin: 0 auto;
  }
 
- a {
-   &:active, &:focus {
-     color: $primary-color;
-   }
- }
 
  /* ## POST CUSTOMISATIONS ## */
 
@@ -167,6 +166,9 @@
    border: medium none;
    width: 100%;
    color: #4B4F54;
+   &:active, &:focus {
+     outline: none;
+   }
  }
 
  .comment-like-form {
@@ -188,34 +190,8 @@
  }
 
  .registration-bg {
-   padding-top: 9em;
-   height: 100%;
-   background-image: image-url('nyc.jpg');
-   -moz-background-size: cover;
-   -webkit-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
- }
-
- .login-bg {
-   padding-top: 9em;
-   height: 100%;
-   background-image: image-url('ocean.jpg');
-   -moz-background-size: cover;
-   -webkit-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
- }
-
- .log-in{
-   margin-left: auto;
-   margin-right: auto;
-   text-align:center;
-   border: none;
- }
-
- .panel {
-   border-radius: 8px;
+   padding-top: 7em;
+   background: white;
  }
 
  .panel-heading{
@@ -230,6 +206,25 @@
      width: 100%;
    }
  }
+
+ .login-bg {
+   background: white;
+   padding-top: 7em;
+ }
+
+ .log-in{
+   padding: 5px 10px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align:center;
+   //border: 1px solid silver;
+   border-radius: 0px;
+ }
+
+ #user_email, #user_password, #user_user_name, #user_password_confirmation {
+   border-radius: 0px;
+ }
+
 
  #image-preview {
    margin: 0 auto;
@@ -318,6 +313,13 @@
    margin: 0px auto;
  }
 
+.user-statistics {
+  p {
+    float:left;
+    padding-right: 15px;
+  }
+}
+
  .likes {
    margin-top: 20px;
    margin-bottom: 7px;
@@ -327,6 +329,7 @@
  .like, .glyphicon-heart {
    text-decoration: none;
    color: red;
+   font-size: 19px;
  }
 
  .like-button a:hover, a:focus {
@@ -356,4 +359,20 @@
     background-color: #47821F;
     color: white;
   }
+}
+
+a {
+  &:active, &:focus {
+    color: $primary-color;
+  }
+}
+
+a.like {
+  &:active, &:focus {
+    color: red;
+  }
+}
+
+.btn {
+  border-radius: 0px;
 }
