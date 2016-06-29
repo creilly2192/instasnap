@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -9,8 +8,6 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem "paperclip", "~> 5.0.0.beta1"
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'capybara'
-gem 'factory_girl_rails'
 gem 'devise'
 gem 'kaminari'
 gem 'jquery-rails'
@@ -27,8 +24,16 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'sqlite3', '~>1.3.11'
 end
 
 group :test do
   gem 'rspec-rails', '~> 3.4'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
