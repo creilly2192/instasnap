@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.postgresql
+  database: <%= ENV.fetch("DATABASE_URL", "") %>
