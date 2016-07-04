@@ -20,3 +20,4 @@
 /spec/files
 /app/assets/images
 .env
+/config/aws.yml
