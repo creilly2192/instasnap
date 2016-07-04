@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
 
-  has_attached_file :avatar, styles: { medium: '152x152#' }
+  has_attached_file :avatar, styles: { medium: '152x152' }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 
